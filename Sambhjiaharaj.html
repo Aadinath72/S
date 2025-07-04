@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sambhaji Maharaj - The Valiant Maratha Warrior</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;600&family=Noto+Sans:wght@400;600&display=swap');
+        
+        :root {
+            --primary: #da5f09;
+            --secondary: #1a3e72;
+            --accent: #e8b429;
+        }
+        
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .title-font {
+            font-family: 'Teko', sans-serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/99fccc2b-dc6a-4423-9845-b6d9260cb508.png') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+        }
+        
+        .statue {
+            width: 300px;
+            height: 500px;
+            background: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/314292af-41f0-48e6-ab0a-3c4b02b44f4c.png') no-repeat center center;
+            background-size: contain;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .warrior-animation {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+        
+        .warrior {
+            position: absolute;
+            width: 300px;
+            height: 500px;
+            background: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b262c7b7-a176-4c7a-a207-6eb7067c8655.png') no-repeat center center;
+            background-size: contain;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 0.5s ease;
+        }
+        
+        .battlefield {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e8cef3f6-162b-4a1a-8211-a2ca3372daa4.png') no-repeat center bottom;
+            background-size: cover;
+            z-index: 1;
+        }
+        
+        .cannon-fire {
+            position: absolute;
+            width: 60px;
+            height: 30px;
+            background-color: orange;
+            border-radius: 0 50% 50% 0;
+            filter: blur(5px);
+            opacity: 0;
+            animation: cannonAnimation 2s infinite;
+            z-index: 2;
+        }
+        
+        @keyframes cannonAnimation {
+            0% { opacity: 0; transform: scale(0); }
+            20% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(2); }
+        }
+        
+        .timeline-item {
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+        
+        .sword-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto;
+            background: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/710d3e9f-aad1-48c6-90cb-3d66147bb1d7.png') no-repeat center center;
+            background-size: contain;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .statue, .warrior {
+                width: 200px;
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section with Animated Title -->
+    <section class="hero-section flex items-center justify-center text-center text-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b6a403e7-ff45-4ae0-a737-1ac422690d21.png" alt="Panoramic view of Raigad Fort at sunset with Maratha flags fluttering in the wind" class="w-full h-full object-cover" />
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <h1 class="title-font text-6xl md:text-8xl mb-4 transform transition duration-500 hover:scale-105">
+                <span class="block">SAMBHAJI</span>
+                <span class="block">MAHARAJ</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 font-light">The Lion of Maharashtra | Protector of Dharma</p>
+            <div class="flex justify-center space-x-4">
+                <button class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-full transition duration-300 transform hover:scale-105">
+                    Explore History
+                </button>
+                <button class="border-2 border-white hover:bg-white hover:text-black text-white px-6 py-3 rounded-full transition duration-300 transform hover:scale-105">
+                    Watch Documentary
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warrior Animation Section -->
+    <section class="py-16 bg-gradient-to-b from-gray-100 to-white">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font text-4xl md:text-5xl text-center mb-12 text-orange-600">The Valiant Warrior King</h2>
+            <div class="warrior-animation mb-16">
+                <div class="warrior floating" id="animatedWarrior"></div>
+                <div class="battlefield" id="battleScene"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-lg md:text-xl mb-8 leading-relaxed">
+                    Sambhaji Maharaj, the son of Chhatrapati Shivaji Maharaj, was a fearless warrior who defended the Maratha Empire against the mighty Mughal forces. 
+                    His strategic brilliance and unwavering courage made him one of the most formidable rulers of his time.
+                </p>
+                
+                <div class="flex justify-center space-x-4">
+                    <div class="sword-icon"></div>
+                    <div class="sword-icon"></div>
+                    <div class="sword-icon"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-16 bg-orange-50">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font text-4xl md:text-5xl text-center mb-16 text-orange-600">Life and Legacy</h2>
+            
+            <div class="timeline relative max-w-4xl mx-auto">
+                <div class="absolute left-1/2 h-full w-1 bg-orange-600 transform -translate-x-1/2"></div>
+                
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item mb-8">
+                    <div class="flex flex-col md:flex-row items-center justify-center">
+                        <div class="w-full md:w-1/2 p-4 order-1 md:order-1">
+                            <div class="bg-white rounded-lg shadow-xl p-6 h-full">
+                                <h3 class="title-font text-2xl text-orange-600 mb-2">1657: Birth of a Legend</h3>
+                                <p>Sambhaji was born on May 14, 1657, at Purandar Fort to Chhatrapati Shivaji Maharaj and Saibai.</p>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 p-4 order-2 md:-order-1 flex justify-center md:justify-end">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/afead894-1b14-42e1-82b5-6918802579b1.png" alt="Ancient Purandar Fort with stone walls and Maratha flags against a mountainous backdrop" class="rounded-lg shadow-lg w-full max-w-xs" />
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item mb-8">
+                    <div class="flex flex-col md:flex-row items-center justify-center">
+                        <div class="w-full md:w-1/2 p-4 order-1">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7f726662-a1fd-490d-98c9-b57bdf559d79.png" alt="Young Sambhaji in royal attire learning warfare and administration from his father Shivaji" class="rounded-lg shadow-lg w-full max-w-xs" />
+                        </div>
+                        <div class="w-full md:w-1/2 p-4 order-2">
+                            <div class="bg-white rounded-lg shadow-xl p-6 h-full">
+                                <h3 class="title-font text-2xl text-orange-600 mb-2">1678: Coronation</h3>
+                                <p>Sambhaji was crowned as the second Chhatrapati of the Maratha Empire at Raigad Fort, continuing his father's legacy.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item mb-8">
+                    <div class="flex flex-col md:flex-row items-center justify-center">
+                        <div class="w-full md:w-1/2 p-4 order-1 md:order-1">
+                            <div class="bg-white rounded-lg shadow-xl p-6 h-full">
+                                <h3 class="title-font text-2xl text-orange-600 mb-2">1681-89: Defending the Empire</h3>
+                                <p>Sambhaji led numerous successful campaigns against the Mughals, Portuguese, and English, expanding the Maratha dominion.</p>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 p-4 order-2 md:-order-1 flex justify-center md:justify-end">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0a6bf912-26fd-4086-b32f-ff99f3048b94.png" alt="Epic battle scene between Maratha and Mughal forces with horses, swords, and cannons" class="rounded-lg shadow-lg w-full max-w-xs" />
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item">
+                    <div class="flex flex-col md:flex-row items-center justify-center">
+                        <div class="w-full md:w-1/2 p-4 order-1">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/25039b12-781a-4b62-a95d-efe85ccabdcb.png" alt="Brave Sambhaji Maharaj standing firm against adversaries with sword in hand" class="rounded-lg shadow-lg w-full max-w-xs" />
+                        </div>
+                        <div class="w-full md:w-1/2 p-4 order-2">
+                            <div class="bg-white rounded-lg shadow-xl p-6 h-full">
+                                <h3 class="title-font text-2xl text-orange-600 mb-2">1689: Supreme Sacrifice</h3>
+                                <p>After being captured by Aurangzeb, Sambhaji endured brutal torture but refused to convert or surrender, becoming a symbol of courage and sacrifice.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warrior Code Section -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font text-4xl md:text-5xl text-center mb-12 text-orange-400">The Warrior's Code</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-gray-800 rounded-xl p-6 transform transition duration-300 hover:scale-105 hover:bg-gray-700">
+                    <div class="flex justify-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/eb54fe79-7a84-47af-a69a-0342fdf5472c.png" alt="Golden Maratha sword with intricate hilt design and leather scabbard" class="w-16 h-16" />
+                    </div>
+                    <h3 class="title-font text-2xl text-center mb-3 text-orange-400">Courage</h3>
+                    <p class="text-center">"Fear is the only enemy. A true warrior faces challenges head-on with unwavering courage."</p>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl p-6 transform transition duration-300 hover:scale-105 hover:bg-gray-700">
+                    <div class="flex justify-center mb-4">
+                        <img src="null" alt="Ancient Maratha royal seal with Sanskrit inscription and lion emblem" class="w-16 h-16" />
+                    </div>
+                    <h3 class="title-font text-2xl text-center mb-3 text-orange-400">Dharma</h3>
+                    <p class="text-center">"Righteousness is the foundation of rule. A king must protect dharma before protecting his kingdom."</p>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl p-6 transform transition duration-300 hover:scale-105 hover:bg-gray-700">
+                    <div class="flex justify-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/48a46f8f-8c20-468a-a1c7-1f277053bcb5.png" alt="Maratha warrior helmet with chainmail and traditional feather adornment" class="w-16 h-16" />
+                    </div>
+                    <h3 class="title-font text-2xl text-center mb-3 text-orange-400">Sacrifice</h3>
+                    <p class="text-center">"The greatest honor is to give one's life in defense of one's people and principles."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Tribute with Animation -->
+    <section class="py-20 relative overflow-hidden" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2d7e0f7b-c7b6-4dee-8f33-e78f3d7b4d70.png'); background-size: cover;">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <img src="https://placehold.co/1920x1080" alt="Silhouette of Sambhaji Maharaj standing on a cliff overlooking Maratha territory at sunset" class="w-full h-full object-cover" />
+        </div>
+        <div class="container mx-auto px-4 relative z-10 text-center text-white">
+            <div class="statue mb-8" id="finalStatue"></div>
+            <h2 class="title-font text-5xl md:text-6xl mb-6">श्रीमंत योगी</h2>
+            <h3 class="title-font text-3xl md:text-4xl mb-8">"The Divine Warrior King"</h3>
+            <p class="text-xl max-w-3xl mx-auto leading-relaxed">
+                Sambhaji Maharaj's life was a testament to courage, resilience, and devotion to one's principles. 
+                His sacrifice became the foundation for the Maratha Empire's later expansion under Chhatrapati Rajaram and Chhatrapati Shahu.
+            </p>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2023 Sambhaji Maharaj Memorial | Tribute to the Lion of Maharashtra</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="#" class="hover:text-orange-400 transition">About</a>
+                <a href="#" class="hover:text-orange-400 transition">Historical Sources</a>
+                <a href="#" class="hover:text-orange-400 transition">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Warrior Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const warrior = document.getElementById('animatedWarrior');
+            const battleScene = document.getElementById('battleScene');
+            
+            // Create cannon fires
+            for (let i = 0; i < 5; i++) {
+                const cannon = document.createElement('div');
+                cannon.classList.add('cannon-fire');
+                cannon.style.left = `${Math.random() * 100}%`;
+                cannon.style.bottom = '50px';
+                cannon.style.animationDelay = `${Math.random() * 2}s`;
+                battleScene.appendChild(cannon);
+            }
+            
+            // Create background movement
+            // This is placeholder code - in a full implementation, we'd use GSAP or similar
+            // for more sophisticated animations
+            setInterval(() => {
+                warrior.style.transform = `translateX(-50%) translateY(${Math.random() * 10 - 5}px)`;
+            }, 1000);
+            
+            // Final statue glow effect
+            const finalStatue = document.getElementById('finalStatue');
+            setInterval(() => {
+                finalStatue.style.filter = `drop-shadow(0 0 ${Math.random() * 15 + 5}px rgba(218, 95, 9, 0.7))`;
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
+
